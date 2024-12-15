@@ -66,13 +66,12 @@
         <label for="password">Contraseña:</label>
         <input type="password" id="password" name="password" required>
         <button type="submit">Ingresar</button>
-        <p class="error" id="errorMessage"></p>
+    <p class="error" id="errorMessage"></p>
     </form>
 
     <div class="register-option" id="registerOption" style="display: none;">
-        <p>¿No tenes un usuario? ¿En serio? <a href="home/sesion/registro">Hace click aca mostro</a></p>
+    <p>¿No tenes un usuario? ¿En serio? <a href="index/">Hace click aca mostro</a></p>
     </div>
-
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();

@@ -8,14 +8,14 @@ class Nombre(models.Model):
     valor = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.valor
+        return self.nombre
 
 
 class Apellido(models.Model):
     valor = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.valor
+        return self.apellido
 
 class Usuario(models.Model):
     nombre = models.CharField(max_length=50)
@@ -53,6 +53,6 @@ def registrar_usuario(request):
         )
         nuevo_usuario.save()
         messages.success(request, 'Registro completado con éxito.')
-        return redirect('inicio/')
+        return redirect('index/')
 
-    return render(request, 'registro.html')
+    return render(request, 'index.html')
