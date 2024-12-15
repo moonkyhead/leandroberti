@@ -1,21 +1,21 @@
 from django.db import models
-
 # Create your models here.
 
-from django.db import models
 
-class Nombre(models.Model):
-    valor = models.CharField(max_length=50)
+
+class Musica(models.Model):
+    titulo = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.titulo
+
+
+class Artista(models.Model):
+    nombre = models.CharField(max_length=100)
 
     def __str__(self):
         return self.nombre
 
-
-class Apellido(models.Model):
-    valor = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.apellido
 
 class Usuario(models.Model):
     nombre = models.CharField(max_length=50)
@@ -28,9 +28,12 @@ class Usuario(models.Model):
         return self.usuario
 
 
+
 from django.shortcuts import render, redirect
-from .models import Usuario
+from .models import Usuario, Musica, Artista
 from django.contrib import messages
+
+from django.contrib.auth.hashers import make_password
 
 def registrar_usuario(request):
     if request.method == 'POST':
@@ -38,7 +41,7 @@ def registrar_usuario(request):
         apellido = request.POST['lastName']
         correo_electronico = request.POST['email']
         usuario = request.POST['username']
-        contrasena = request.POST['password']
+        contrasena = make_password(request.POST['password'])
 
         if Usuario.objects.filter(usuario=usuario).exists() or Usuario.objects.filter(correo_electronico=correo_electronico).exists():
             messages.error(request, 'El usuario o correo ya está registrado.')
@@ -53,6 +56,7 @@ def registrar_usuario(request):
         )
         nuevo_usuario.save()
         messages.success(request, 'Registro completado con éxito.')
-        return redirect('index/')
+        return redirect('index')
 
     return render(request, 'index.html')
+
