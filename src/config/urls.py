@@ -32,6 +32,7 @@ urlpatterns = [
     path('trashmetal/testament/', views.testament),
     path('deathmetal/archenemy/', views.archenemy),
     path('deathmetal/children/', views.children),
+    path('deathmetal/cannibal/', views.cannibal),
     path('sesion/', views.sesion),
     path('registro/', views.registro),
 ]
