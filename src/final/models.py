@@ -53,6 +53,6 @@ def registrar_usuario(request):
         )
         nuevo_usuario.save()
         messages.success(request, 'Registro completado con éxito.')
-        return redirect('inicio')
+        return redirect('inicio/')
 
     return render(request, 'registro.html')

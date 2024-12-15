@@ -35,9 +35,8 @@ urlpatterns = [
     path('index/deathmetal/children/', views.children),
     path('index/deathmetal/cannibal/', views.cannibal),
     path('home/sesion/', views.sesion),
-    path('home/sesion/final', views.sesion),
     path('home/registro/', views.registro),
-    path('home/registro/final', views.registro),
+    
     
   
     
