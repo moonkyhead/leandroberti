@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leandrito - Registro</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-family: 'PlazaFont', sans-serif;
+            font-size: 5em;
+            margin-top: 50px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-size: 1.5em;
+            margin: 10px 0 5px;
+            display: block;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Registro</h1>
+
+    <form id="registerForm">
+        <label for="firstName">Nombre:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Apellido:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="username">Usuario (máx. 15 caracteres):</label>
+        <input type="text" id="username" name="username" maxlength="15" required>
+
+        <label for="password">Contraseña (máx. 15 caracteres):</label>
+        <input type="password" id="password" name="password" maxlength="15" required>
+
+        <button type="submit">Registrarse</button>
+    </form>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Registro completado con éxito');
+            window.location.href = 'inicio.html';
+        });
+    </script>
+
+</body>
+</html>

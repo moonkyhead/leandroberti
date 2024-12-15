@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leandrito - Ingreso</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-family: 'PlazaFont', sans-serif;
+            font-size: 5em;
+            margin-top: 50px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-size: 1.5em;
+            margin: 10px 0 5px;
+            display: block;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+        .register-option {
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
+        .register-option a {
+            color: lightblue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Iniciar Sesión</h1>
+
+    <form id="loginForm">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Ingresar</button>
+        <p class="error" id="errorMessage"></p>
+    </form>
+
+    <div class="register-option" id="registerOption" style="display: none;">
+        <p>¿No tenes un usuario? ¿En serio? <a href="registro.html">Hace click aca mostro</a></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'admin' && password === '1234') {
+                window.location.href = 'principal.html';
+            } else {
+                document.getElementById('errorMessage').textContent = 'Usuario o contraseña incorrectos';
+                document.getElementById('registerOption').style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+</html>
+
