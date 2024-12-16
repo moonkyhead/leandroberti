@@ -31,10 +31,6 @@ urlpatterns = [
     path('index/numetal/', views.numetal),
     path('index/trashmetal/', views.trashmetal),
     path('index/deathmetal/', views.deathmetal),
-    path('sesion/index/', views.index),
-    path('sesion/index/numetal/', views.numetal),
-    path('sesion/index/trashmetal/', views.trashmetal),
-    path('sesion/index/deathmetal/', views.deathmetal),
     path('index/numetal/korn/', views.korn),
     path('index/numetal/disturbed/', views.disturbed),
     path('index/numetal/deftones/', views.deftones),
@@ -44,6 +40,19 @@ urlpatterns = [
     path('index/deathmetal/archenemy/', views.archenemy),
     path('index/deathmetal/children/', views.children),
     path('index/deathmetal/cannibal/', views.cannibal),
+    path('sesion/index/', views.index),
+    path('sesion/index/numetal/', views.numetal),
+    path('sesion/index/trashmetal/', views.trashmetal),
+    path('sesion/index/deathmetal/', views.deathmetal),
+    path('sesion/index/numetal/korn/', views.korn),
+    path('sesion/index/numetal/disturbed/', views.disturbed),
+    path('sesion/index/numetal/deftones/', views.deftones),
+    path('sesion/index/trashmetal/metallica/', views.metallica),
+    path('sesion/index/trashmetal/megadeth/', views.megadeth),
+    path('sesion/index/trashmetal/testament/', views.testament),
+    path('sesion/index/deathmetal/archenemy/', views.archenemy),
+    path('sesion/index/deathmetal/children/', views.children),
+    path('sesion/index/deathmetal/cannibal/', views.cannibal),
     path('registro/index/numetal/', views.numetal),
     path('registro/index/trashmetal/', views.trashmetal),
     path('registro/index/deathmetal/', views.deathmetal),
@@ -56,9 +65,4 @@ urlpatterns = [
     path('registro/index/deathmetal/archenemy/', views.archenemy),
     path('registro/index/deathmetal/children/', views.children),
     path('registro/index/deathmetal/cannibal/', views.cannibal),
-
-    
-    
-  
-    
 ]

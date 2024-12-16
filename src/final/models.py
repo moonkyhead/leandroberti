@@ -3,11 +3,11 @@ from django.db import models
 
 
 
-class Musica(models.Model):
-    titulo = models.CharField(max_length=100)
+class Banda(models.Model):
+    nombre = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.titulo
+        return self.nombre
 
 
 class Artista(models.Model):
@@ -30,7 +30,7 @@ class Usuario(models.Model):
 
 
 from django.shortcuts import render, redirect
-from .models import Usuario, Musica, Artista
+from .models import Usuario, Banda, Artista
 from django.contrib import messages
 
 from django.contrib.auth.hashers import make_password
