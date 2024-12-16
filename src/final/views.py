@@ -9,6 +9,9 @@ def home(request):
 def index(request):
     return render(request, 'final/index.html')
 
+def instructores(request):
+    return render(request, 'final/instructores.html')
+
 def numetal(request):
     return render(request, 'final/numetal.html')
 

@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from final import views
+from django.conf import settings # para probar nuevos archivos
+from django.conf.urls.static import static
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,6 +35,7 @@ urlpatterns = [
     path('index/numetal/', views.numetal),
     path('index/trashmetal/', views.trashmetal),
     path('index/deathmetal/', views.deathmetal),
+    path('index/instructores/', views.instructores),
     path('index/numetal/korn/', views.korn),
     path('index/numetal/disturbed/', views.disturbed),
     path('index/numetal/deftones/', views.deftones),
