@@ -1,43 +1,97 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escalofriante</title>
+    <title>Leandrito</title>
     <style>
         body {
             background-color: black;
             color: white;
             text-align: center;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            overflow: hidden;
+            font-family: Arial, sans-serif;
         }
-        .contenido {
+        h1 {
+            font-family: 'typehill studio', sans-serif;
+            font-size: 3em;
+            margin-top: 50px;
+        }
+        h2 {
+            font-family: 'typehill studio', sans-serif;
+            font-size: 3em;
+            margin: 20px 0;
+        }
+        a {
+            font-family: 'typehill studio', sans-serif;
+            text-decoration: none;
+            color: white;
+            background: black;
+            padding: 15px 30px;
+            display: inline-block;
+            margin-top: 10px;
+            border: 1px solid white;
+            font-size: 1em;
+        }
+        @font-face {
+            font-family: 'KornFont';
+            src: url('https://example.com/path-to-korn-font.ttf'); 
+        }
+        @font-face {
+            font-family: 'PlazaFont';
+            src: url('https://example.com/path-to-plaza-font.ttf'); 
+        }
+        @font-face {
+            font-family: 'KingsmanFont';
+            src: url('https://example.com/path-to-kingsman-font.ttf'); 
+        }
+    </style>
+</head><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lo de Leandrito</title>
+    <style>
+        .container {
             position: relative;
+            text-align: center;
         }
+
+        .top-left {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
         img {
-            max-width: 100%;
+            width: 50%;
             height: auto;
         }
-        audio {
-            display: none;
+
+        h1, h2 {
+            margin: 0;
         }
     </style>
 </head>
 <body>
-    <div class="contenido">
-        <h1>Un regalito</h1>
-        <img src="https://static.wikia.nocookie.net/villains/images/3/34/Regan_The_Exorcist.jpg" alt="Rostro escalofriante">
-        <audio autoplay loop>
-            <source src="https://www.soundjay.com/human/scream-female-6.mp3" type="audio/mpeg">
-            Tu navegador no soporta audio HTML5.
-        </audio>
-    </div>
+
+<h1>GRACIAS POR ESTE GRAN CURSO!!!</h1>
+
+<div class="container">
+    <img src="{% static 'final/img/exorcist.png' %}" alt="Imagen">
+    
+</div>
+<a href="http://127.0.0.1:8000/index/">Inicio</a>
 </body>
 </html>
+
 
 

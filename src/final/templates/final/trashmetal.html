@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,9 +49,13 @@
     </style>
 </head>
 <body>
-    <a href="metallica/">Metallica</a>
-        <a href="megadeth/">Megadeth</a>
-            <a href="testament/">Testament</a>
-                <a href="http://127.0.0.1:8000/index/">Volver</a>
+
+
+<div style="height: 100vh; background: url('{% static 'final/img/trashmetal.png' %}') no-repeat center center; background-size: contain; display: flex; flex-direction:column; align-items:center; justify-content:center;">
+    <a href="metallica/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); margin: 10px;">Metallica</a>
+    <a href="megadeth/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); margin: 10px;">Megadeth</a> 
+    <a href="testament/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); margin: 10px;">Testament</a>
+    <a href="http://127.0.0.1:8000/index/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); margin: 10px;">Volver</a>
+</div>
 </body>
 </html>

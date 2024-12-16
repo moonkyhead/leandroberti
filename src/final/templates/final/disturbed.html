@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,30 +36,46 @@
         }
         @font-face {
             font-family: 'KornFont';
-            src: url('https://example.com/path-to-korn-font.ttf'); /* Reemplaza con la URL correcta */
+            src: url('https://example.com/path-to-korn-font.ttf'); 
         }
         @font-face {
             font-family: 'PlazaFont';
-            src: url('https://example.com/path-to-plaza-font.ttf'); /* Reemplaza con la URL correcta */
+            src: url('https://example.com/path-to-plaza-font.ttf'); 
         }
         @font-face {
             font-family: 'KingsmanFont';
-            src: url('https://example.com/path-to-kingsman-font.ttf'); /* Reemplaza con la URL correcta */
+            src: url('https://example.com/path-to-kingsman-font.ttf'); 
         }
     </style>
     
 </head>
 <body>
-    <h1>Biografia</h1>
-    <li>Disturbed es una banda de heavy metal formada en Chicago, Illinois, por David Draiman (voz), Dan Donegan (guitarra), John Moyer (bajo) y Mike Wengren (batería). Sus exintegrantes son el cantante Erich Awalt y el bajista Steve Kmak.
+    <h1>Disturbed</h1><img src="{% static 'final/img/disturbed.png' %}" alt="" height="50%">
 
-        Fundada en 1994 bajo el nombre de Brawl, y solo hasta 1996 cuando David Draiman fue contratado como nuevo vocalista cambió su nombre a Disturbed. Comenzaron como una banda de nu metal pero después mostraron fuertes influencias del heavy metal incorporando solos y riffs de guitarra más técnicos.
-        
-        Hasta abril de 2017, han vendido 16 millones de álbumes en todo el mundo, convirtiéndose en uno de los más grandes taquilleros en los últimos años.1​ La banda ha lanzado seis álbumes de estudio, cinco de los cuales han consecutivamente debutado en el número uno en la lista Billboard 200.2​ Disturbed ha ganado varios reconocimientos, teniendo 1 disco de plata, 19 discos de platino, 2 sencillos de oro y un sencillo platino.
-        
-        La banda entró en receso desde octubre de 2011, durante el cual los miembros de la banda se centraron en varios proyectos paralelos, retornando en junio del año 2015, con el lanzamiento de su primer álbum en cinco años, Immortalized, el 21 de agosto.</li>
-        
+   
+    <section style="padding: 20px; background-color: #111; color: white; text-align: center;">
+        <h2 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Biografía</h2>
+        <p style="max-width: 800px; margin: 0 auto; font-size: 1.2em;">
+            Disturbed es una banda estadounidense de metal alternativo formada en 1994 en Chicago, Illinois. Conocidos por su potente sonido 
+            que combina metal pesado con melodías accesibles, la banda ha ganado reconocimiento mundial gracias a la potente voz de David Draiman 
+            y su estilo único que abarca desde el nu-metal hasta el metal progresivo. Han influido en muchas bandas del género y siguen siendo 
+            una de las más exitosas del metal moderno.
+        </p>
+    </section>
 
+  
+    <section style="padding: 20px; background-color: #222; color: white; text-align: center;">
+        <h2 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Discografía</h2>
+        <ul style="list-style: none; padding: 0; font-size: 1.2em; line-height: 2;">
+            <li><strong>The Sickness</strong> - 2000</li>
+            <li><strong>Believe</strong> - 2002</li>
+            <li><strong>Ten Thousand Fists</strong> - 2005</li>
+            <li><strong>Indestructible</strong> - 2008</li>
+            <li><strong>Asylum</strong> - 2010</li>
+            <li><strong>Immortalized</strong> - 2015</li>
+            <li><strong>Evolution</strong> - 2018</li>
+        </ul>
+    </section>
 
         <a href="http://127.0.0.1:8000/index/numetal/">volver</a>
         <a href="http://127.0.0.1:8000/index/">Inicio</a>

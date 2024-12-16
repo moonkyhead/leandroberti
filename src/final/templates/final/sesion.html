@@ -1,3 +1,5 @@
+{% load static %} 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +9,7 @@
     <style>
         body {
             background-color: black;
-            color: white;
+            color: red;
             text-align: center;
             font-family: Arial, sans-serif;
         }
@@ -35,7 +37,7 @@
         button {
             font-size: 1.2em;
             padding: 10px 20px;
-            background-color: white;
+            background-color: red;
             color: black;
             border: none;
             border-radius: 5px;
@@ -51,27 +53,32 @@
             font-size: 1.2em;
         }
         .register-option a {
-            color: lightblue;
+            color: white;
             text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-    <h1>Iniciar Sesión</h1>
-
-    <form id="loginForm">
-        <label for="username">Usuario:</label>
-        <input type="text" id="username" name="username" required>
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Ingresar</button>
-    <p class="error" id="errorMessage"></p>
-    </form>
-
-    <div class="register-option" id="registerOption" style="display: none;">
-    <p>¿No tenes un usuario? ¿En serio? <a href="index/">Hace click aca mostro</a></p>
+    <div style="background: url('{% static 'final/img/sesion.png' %}') no-repeat center center; background-size: contain; padding: 20px;">
+        <h1 style="text-align: center; color: red; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Iniciar Sesión</h1>
+        <form id="loginForm" style="background: none(255, 255, 255, 0.8); padding: 20px; border-radius: 10px;">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Ingresar</button>
+            <p class="error" id="errorMessage"></p>
+        </form>
+    
+        <div class="register-option" id="registerOption" style="display: none; text-align: center; margin-top: 20px;">
+            <p>¿No tenes un usuario? ¿En serio?</p>
+            <p><a href="index/">Hace click aca mostro</a></p>
+        </div>
     </div>
+    
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();

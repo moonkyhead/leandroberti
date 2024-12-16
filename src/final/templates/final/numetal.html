@@ -1,3 +1,5 @@
+{% load static %} 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,22 +36,26 @@
         }
         @font-face {
             font-family: 'KornFont';
-            src: url('https://example.com/path-to-korn-font.ttf'); /* Reemplaza con la URL correcta */
+            src: url('https://example.com/path-to-korn-font.ttf'); 
         }
         @font-face {
             font-family: 'PlazaFont';
-            src: url('https://example.com/path-to-plaza-font.ttf'); /* Reemplaza con la URL correcta */
+            src: url('https://example.com/path-to-plaza-font.ttf'); 
         }
         @font-face {
             font-family: 'KingsmanFont';
-            src: url('https://example.com/path-to-kingsman-font.ttf'); /* Reemplaza con la URL correcta */
+            src: url('https://example.com/path-to-kingsman-font.ttf'); 
         }
     </style>
 </head>
 <body>
-    <a href="korn/">Korn</a>
-        <a href="disturbed/">Disturbed</a>
-            <a href="deftones/">Deftones</a>
-                <a href="http://127.0.0.1:8000/index/">Volver</a>
+    <div style="height: 100vh; background: url('{% static 'final/img/numetal.png' %}') no-repeat center center; background-size: contain; display: flex; flex-direction:column; align-items:center; justify-content:center;">
+        <a href="korn/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); margin: 10px;">Korn</a>
+        <a href="disturbed/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); margin: 10px;">Disturbed</a> 
+        <a href="deftones/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); margin: 10px;">Deftones</a>
+        <a href="http://127.0.0.1:8000/index/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); margin: 10px;">Volver</a>
+    </div>
+    
+    
 </body>
 </html>

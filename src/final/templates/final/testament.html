@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,9 +50,41 @@
     
 </head>
 <body>
-    <h1>Biografia</h1>
-    <li>Testament (estilizado TestAmenT) es una banda estadounidense de thrash metal de Berkeley, California. Hasta la fecha han publicado doce álbumes de estudio, cuatro álbumes en vivo y seis álbumes recopilatorios, tiene tres discos que entraron en el top-50 en las listas inglesas y en 1999 con el disco The Gathering entró en el top-50 alemán. Tras casi una década sin lanzar un álbum de estudio desde entonces, encadenaron cuatro entre 2008 y 2020 que accedieron todos ellos al top 100 del Billboard 200 (alcanzando Dark Roots of Earth la mejor posición, un 12.º puesto).1​ Junto con el Big Four, el Big Four alemán, Exodus, Overkill y Death Angel, Testament es considerada una de las bandas más relevantes e influyentes de la historia del thrash metal, siendo la explicación más común para no estar incluida entre los primeros mencionados el hecho de que su álbum debut fuera algo tardío (1987) comparado con el de las otras cuatro bandas (1983-1985).</li>
-
+    <body>
+        <h1>Testament</h1><img src="{% static 'final/img/testament.png' %}" alt="" height="50%">
+    
+        <!-- Sección Biografía -->
+        <section style="padding: 20px; background-color: #111; color: white; text-align: center;">
+            <h2 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Biografía</h2>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.2em;">
+                Testament es una banda estadounidense de thrash metal formada en 1983 en Berkeley, California. Aclamados por su agresivo y técnico sonido, 
+                Testament es una de las bandas más influyentes dentro del thrash metal, con una carrera que abarca varias décadas. Han sido conocidos por 
+                su habilidad para combinar riffs pesados con melodías complejas y su característico estilo vocal. A lo largo de los años, han sido una de las 
+                principales bandas del género y siguen siendo relevantes en la escena del metal.
+            </p>
+        </section>
+        
+        <!-- Sección Discografía -->
+        <section style="padding: 20px; background-color: #222; color: white; text-align: center;">
+            <h2 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Discografía</h2>
+            <ul style="list-style: none; padding: 0; font-size: 1.2em; line-height: 2;">
+                <li><strong>The Legacy</strong> - 1987</li>
+                <li><strong>The New Order</strong> - 1988</li>
+                <li><strong>Practice What You Preach</strong> - 1989</li>
+                <li><strong>Souls of Black</strong> - 1990</li>
+                <li><strong>The Ritual</strong> - 1992</li>
+                <li><strong>Low</strong> - 1994</li>
+                <li><strong>Demonic</strong> - 1997</li>
+                <li><strong>The Gathering</strong> - 1999</li>
+                <li><strong>First Strike Still Deadly</strong> - 2001</li>
+                <li><strong>American Carnage (Live)</strong> - 2010</li>
+                <li><strong>The Dark Roots of Earth</strong> - 2012</li>
+                <li><strong>Brotherhood of the Snake</strong> - 2016</li>
+                <li><strong>Titans of Creation</strong> - 2020</li>
+            </ul>
+        </section>
+    </body>
+    
 
     <a href="http://127.0.0.1:8000/index/trashmetal/">volver</a>
     <a href="http://127.0.0.1:8000/index/">Inicio</a>

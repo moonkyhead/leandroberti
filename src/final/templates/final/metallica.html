@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,16 +50,37 @@
     
 </head>
 <body>
-    <h1>Biografia</h1>
-    <li>Metallica es una banda estadounidense de heavy metal2​ fundada en 1981 en Los Ángeles, aunque ha estado radicada en San Francisco durante la mayor parte de su carrera.3​ Está integrada por el vocalista y guitarrista rítmico James Hetfield, el baterista Lars Ulrich, el guitarrista líder Kirk Hammet, y el bajista Robert Trujillo. Metallica es considerada como una de las bandas comercialmente más exitosas de todos los tiempos, habiendo vendido más de 125 millones de álbumes en todo el mundo.4​5​
-
-        Fue fundada en 1981 en Los Ángeles por Ulrich y Hetfield, a los que se les unirían Ron McGovney y Dave Mustaine. En 1982, McGovney dejó la banda, siendo sustituido por Cliff Burton. Al año siguiente, Mustaine fue despedido por problemas de comportamiento, siendo reemplazado por Kirk Hammett, exguitarrista de Exodus. En 1986, durante una gira de conciertos, Burton fallece en un accidente mientras viajaba en un autobús en Suecia, lo cual provocó la entrada al grupo de Jason Newsted.6​ En 2001, Newsted abandonó a la banda, siendo reemplazado por Robert Trujillo en 2003.
+    <body>
+        <h1>Metallica</h1><img src="{% static 'final/img/metallica.png' %}" alt="" height="50%">
+    
         
-        Hasta la fecha, el grupo ha editado 11 álbumes de estudio, siendo el último de estos 72 Seasons el cual fue lanzado mundialmente el 14 de abril de 2023. Metallica es considerada parte de los cuatro grandes del thrash metal, junto con Megadeth, Slayer y Anthrax.7​ Además, el grupo ha conseguido numerosos premios musicales, entre los que destacan nueve Grammys, dos premios otorgados por la cadena musical MTV, dos galardones de la Academia de Música Americana (American Music Awards) y dos premios de la revista Billboard, además de pertenecer desde el año 2009 al Salón de la fama del Rock8​ y poseer una estrella en el paseo de la fama de la revista Kerrang!
+        <section style="padding: 20px; background-color: #111; color: white; text-align: center;">
+            <h2 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Biografía</h2>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.2em;">
+                Metallica es una de las bandas más influyentes y exitosas de la historia del metal, formada en 1981 en Los Ángeles, California. Aclamada por su sonido 
+                pesado y agresivo, Metallica ha sido pionera en el thrash metal y se ha mantenido en la vanguardia del rock durante más de cuatro décadas. A lo largo de su 
+                carrera, la banda ha vendido más de 125 millones de copias de sus álbumes y ha ganado múltiples premios, incluidos varios premios Grammy.
+            </p>
+        </section>
         
-        </li>
-
-
+       
+        <section style="padding: 20px; background-color: #222; color: white; text-align: center;">
+            <h2 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Discografía</h2>
+            <ul style="list-style: none; padding: 0; font-size: 1.2em; line-height: 2;">
+                <li><strong>Kill 'Em All</strong> - 1983</li>
+                <li><strong>Ride the Lightning</strong> - 1984</li>
+                <li><strong>Master of Puppets</strong> - 1986</li>
+                <li><strong>...And Justice for All</strong> - 1988</li>
+                <li><strong>Metallica (The Black Album)</strong> - 1991</li>
+                <li><strong>Load</strong> - 1996</li>
+                <li><strong>Reload</strong> - 1997</li>
+                <li><strong>St. Anger</strong> - 2003</li>
+                <li><strong>Death Magnetic</strong> - 2008</li>
+                <li><strong>Hardwired... to Self-Destruct</strong> - 2016</li>
+            </ul>
+        </section>
+    </body>
+    
         <a href="http://127.0.0.1:8000/index/trashmetal/">volver</a>
         <a href="http://127.0.0.1:8000/index/">Inicio</a>
 </body>

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,19 +50,40 @@
     
 </head>
 <body>
-    <h1>Discografia</h1>
-    <li>Korn 1994</li>
-    <li>Life is Peachy 1996</li>
-    <li>Follow the leader 1998</li>
-    <li>Issues 1999</li>
-    <li>Untouchables 2002</li>
-    <li>Take a look in the mirror 1994</li>
-    <li>See you on the other side 2005</li>
-    <li>no title 2007</li>
-    <li>Remember who you are 2010</li>
-    <li>The path of totality 1994</li>
-
-
+    <h1>Korn</h1><img src="{% static 'final/img/korn.png' %}" alt=""height=50%>
+ 
+    
+    <!-- Sección Biografía -->
+    <section style="padding: 20px; background-color: #111; color: white; text-align: center;">
+        <h2 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Biografía</h2>
+        <p style="max-width: 800px; margin: 0 auto; font-size: 1.2em;">
+            Korn es una banda estadounidense de nu-metal formada en 1993 en Bakersfield, California. Conocidos por su sonido distintivo, 
+            que mezcla guitarras de siete cuerdas, bajos distorsionados y la voz única de Jonathan Davis, Korn ha sido pionero en el género nu-metal, 
+            influyendo en innumerables bandas a lo largo de los años.
+        </p>
+    </section>
+    
+    <!-- Sección Discografía -->
+    <section style="padding: 20px; background-color: #222; color: white; text-align: center;">
+        <h2 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Discografía</h2>
+        <ul style="list-style: none; padding: 0; font-size: 1.2em; line-height: 2;">
+            <li><strong>Korn</strong> - 1994</li>
+            <li><strong>Life Is Peachy</strong> - 1996</li>
+            <li><strong>Follow the Leader</strong> - 1998</li>
+            <li><strong>Issues</strong> - 1999</li>
+            <li><strong>Untouchables</strong> - 2002</li>
+            <li><strong>Take a Look in the Mirror</strong> - 2003</li>
+            <li><strong>See You on the Other Side</strong> - 2005</li>
+            <li><strong>Untitled</strong> - 2007</li>
+            <li><strong>Korn III: Remember Who You Are</strong> - 2010</li>
+            <li><strong>The Path of Totality</strong> - 2011</li>
+            <li><strong>The Paradigm Shift</strong> - 2013</li>
+            <li><strong>The Serenity of Suffering</strong> - 2016</li>
+            <li><strong>The Nothing</strong> - 2019</li>
+            <li><strong>Requiem</strong> - 2022</li>
+        </ul>
+    </section>
+    
     <a href="http://127.0.0.1:8000/index/numetal/">volver</a>
     <a href="http://127.0.0.1:8000/index/">Inicio</a>
 </body>

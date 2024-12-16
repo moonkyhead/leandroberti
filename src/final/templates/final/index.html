@@ -1,3 +1,5 @@
+{% load static %} 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +27,7 @@
             font-family: 'KornFont', sans-serif;
             text-decoration: none;
             color: white;
-            background: black;
+            background: rgb(88, 40, 40);
             padding: 15px 30px;
             display: inline-block;
             margin-top: 20px;
@@ -50,12 +52,21 @@
 
     <h1>¿Con que te vas a deleitar el dia de hoy?</h1>
 
-    <a href="numetal/">Nu Metal</a>
-    <a href="trashmetal/">Trash Metal</a>
-    <a href="deathmetal/">Death Metal</a>
-    <a href="instructores/">Nico & Esteban</a>
-
-
+    <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; height: 100vh; background-color: black;">
+        <div style="background: url('{% static 'final/img/index.png' %}') no-repeat center center; background-size: cover; display: flex; align-items: center; justify-content: center;">
+            <a href="numetal/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Nu Metal</a>
+        </div>
+        <div style="background: url('{% static 'final/img/index2.png' %}') no-repeat center center; background-size: cover; display: flex; align-items: center; justify-content: center;">
+            <a href="trashmetal/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Trash Metal</a>
+        </div>
+        <div style="background: url('{% static 'final/img/index3.png' %}') no-repeat center center; background-size: cover; display: flex; align-items: center; justify-content: center;">
+            <a href="deathmetal/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Death Metal</a>
+        </div>
+        <div style="background: url('{% static 'final/img/index4.png' %}') no-repeat center center; background-size: cover; display: flex; align-items: center; justify-content: center;">
+            <a href="instructores/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Nico & Esteban</a>
+        </div>
+    </div>
+    
 
 </body>
 </html>

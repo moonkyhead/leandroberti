@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,26 +36,53 @@
         }
         @font-face {
             font-family: 'KornFont';
-            src: url('https://example.com/path-to-korn-font.ttf'); /* Reemplaza con la URL correcta */
+            src: url('https://example.com/path-to-korn-font.ttf'); 
         }
         @font-face {
             font-family: 'PlazaFont';
-            src: url('https://example.com/path-to-plaza-font.ttf'); /* Reemplaza con la URL correcta */
+            src: url('https://example.com/path-to-plaza-font.ttf'); 
         }
         @font-face {
             font-family: 'KingsmanFont';
-            src: url('https://example.com/path-to-kingsman-font.ttf'); /* Reemplaza con la URL correcta */
+            src: url('https://example.com/path-to-kingsman-font.ttf'); 
         }
     </style>
     
 </head>
 <body>
-    <h1>Biografia</h1>
-    <li>Megadeth es un grupo musical estadounidense de thrash metal, formado en Los Ángeles, California. Fue creada en 1983 por Dave Mustaine (vocalista, guitarrista y compositor principal), después de que fuera expulsado de Metallica, donde ocupaba el puesto de guitarrista principal. Es comúnmente mencionada como una de los cuatro grandes del thrash metal, junto a Metallica, Slayer y Anthrax.1​
+    <h1>Megadeth</h1><img src="{% static 'final/img/megadeth.png' %}" alt="" height="50%">
 
-        Megadeth ha tenido varios cambios en sus componentes, siendo Mustaine el único miembro permanente y el principal compositor; le sigue en duración el bajista y cofundador David Ellefson, que ha participado en la mayoría de sus álbumes y giras musicales. El grupo se disolvió en 2002 después de que Mustaine sufriese una grave lesión en los nervios de su brazo izquierdo como consecuencia de dormirse sobre él, pero tras una intensa terapia física, el guitarrista reunió al grupo musical en 2004. En todo este tiempo, el grupo ha lanzado dieciséis álbumes de estudio, tres EP y dos álbumes en vivo.
-        
-        Megadeth ha logrado obtener varios discos de platino y de oro (seis seguidos en Estados Unidos), incluido el álbum multi-platino y nominado al Grammy, Countdown to Extinction, en 1992. Ha recibido en total doce nominaciones a los premios Grammy y obtuvo uno en 2017 por la canción «Dystopia» del álbum homónimo. Además, ha figurado varias veces en el top 10 de las listas de Billboard, vendiendo más de 38 millones de copias en todo el mundo.</li>
+   
+    <section style="padding: 20px; background-color: #111; color: white; text-align: center;">
+        <h2 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Biografía</h2>
+        <p style="max-width: 800px; margin: 0 auto; font-size: 1.2em;">
+            Megadeth es una banda estadounidense de thrash metal formada en 1983 por Dave Mustaine, tras su salida de Metallica. Conocidos por su velocidad, 
+            virtuosismo en la guitarra y letras a menudo políticas y sociales, Megadeth ha sido una de las bandas más influyentes en el desarrollo del thrash metal. 
+            A lo largo de su carrera, Megadeth ha lanzado una serie de álbumes icónicos y ha mantenido una sólida base de seguidores.
+        </p>
+    </section>
+    
+   
+    <section style="padding: 20px; background-color: #222; color: white; text-align: center;">
+        <h2 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Discografía</h2>
+        <ul style="list-style: none; padding: 0; font-size: 1.2em; line-height: 2;">
+            <li><strong>Killing Is My Business... and Business Is Good!</strong> - 1985</li>
+            <li><strong>Peace Sells... but Who's Buying?</strong> - 1986</li>
+            <li><strong>So Far, So Good... So What!</strong> - 1988</li>
+            <li><strong>Rust in Peace</strong> - 1990</li>
+            <li><strong>Countdown to Extinction</strong> - 1992</li>
+            <li><strong>Youthanasia</strong> - 1994</li>
+            <li><strong>Cryptic Writings</strong> - 1997</li>
+            <li><strong>Risk</strong> - 1999</li>
+            <li><strong>The World Needs a Hero</strong> - 2001</li>
+            <li><strong>United Abominations</strong> - 2007</li>
+            <li><strong>Endgame</strong> - 2009</li>
+            <li><strong>Th1rt3en</strong> - 2011</li>
+            <li><strong>Dystopia</strong> - 2016</li>
+            <li><strong>The Sick, the Dying... and the Dead!</strong> - 2022</li>
+        </ul>
+    </section>
+</body>
 
 
         <a href="http://127.0.0.1:8000/index/trashmetal/">volver</a>

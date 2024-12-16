@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,30 +36,53 @@
         }
         @font-face {
             font-family: 'KornFont';
-            src: url('https://example.com/path-to-korn-font.ttf'); /* Reemplaza con la URL correcta */
+            src: url('https://example.com/path-to-korn-font.ttf'); 
         }
         @font-face {
             font-family: 'PlazaFont';
-            src: url('https://example.com/path-to-plaza-font.ttf'); /* Reemplaza con la URL correcta */
+            src: url('https://example.com/path-to-plaza-font.ttf'); 
         }
         @font-face {
             font-family: 'KingsmanFont';
-            src: url('https://example.com/path-to-kingsman-font.ttf'); /* Reemplaza con la URL correcta */
+            src: url('https://example.com/path-to-kingsman-font.ttf'); 
         }
     </style>
     
 </head>
 <body>
-    <h1>Biografia</h1>
-    <li>Arch Enemy es una banda sueca de death metal melódico formada en Halmstad en 1995.
+    <h1>Arch Enemy</h1><img src="{% static 'final/img/archenemy.png' %}" alt="" height="50%">
 
-        En sus inicios exploró el death metal original, pero sufrió una transformación musical después del cambio de integrantes que tuvo, y comenzó a hacer un death metal más melódico, que sigue haciendo actualmente. Sus letras hablan de rebelión y suelen criticar a la sociedad y a la religión cristiana4​ La banda es procedente de Suecia, formada en 1996 por el guitarrista Michael Amott5​ junto al vocalista Johan Liiva. La banda ha publicado diez álbumes de estudio, dos en directo, tres EP y dos DVD. La banda fue originalmente liderada por Johan Liiva, hasta que Angela Gossow se unió a la banda como vocalista en 2001.6​7​ En 2014, Gossow dejó la banda y fue remplazada por Alissa White-Gluz, exvocalista de The Agonist.
-        
-        Historia
-        Fundada por el guitarrista Michael Amott (Spiritual Beggars, Carcass y Carnage), quien reclutando a su hermano Christopher también guitarrista, Johan Liiva (Furbowl) en voces y bajo, y Daniel Erlandsson (exmiembro de Eucharist) en la batería, formarían una de las bandas más importantes del metal actual.</li>
+    
+    <section style="padding: 20px; background-color: #111; color: white; text-align: center;">
+        <h2 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Biografía</h2>
+        <p style="max-width: 800px; margin: 0 auto; font-size: 1.2em;">
+            Arch Enemy es una banda de death metal melódico originaria de Suecia, formada en 1996. Conocida por su estilo agresivo y técnico, 
+            la banda ha sido una de las más influyentes en su género, destacando por las poderosas guitarras de Michael Amott y la potente voz 
+            de Alissa White-Gluz. A lo largo de los años, han lanzado varios álbumes que han sido aclamados por críticos y fanáticos del metal.
+        </p>
+    </section>
+    
+    
+    <section style="padding: 20px; background-color: #222; color: white; text-align: center;">
+        <h2 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Discografía</h2>
+        <ul style="list-style: none; padding: 0; font-size: 1.2em; line-height: 2;">
+            <li><strong>Black Earth</strong> - 1996</li>
+            <li><strong>Stigmata</strong> - 1998</li>
+            <li><strong>Burning Bridges</strong> - 1999</li>
+            <li><strong>Wages of Sin</strong> - 2001</li>
+            <li><strong>Anthems of Rebellion</strong> - 2003</li>
+            <li><strong>Doomsday Machine</strong> - 2005</li>
+            <li><strong>Rise of the Tyrant</strong> - 2007</li>
+            <li><strong>We Will Rise (EP)</strong> - 2007</li>
+            <li><strong>Khaos Legions</strong> - 2011</li>
+            <li><strong>War Eternal</strong> - 2014</li>
+            <li><strong>Will to Power</strong> - 2017</li>
+            <li><strong>Deceivers</strong> - 2022</li>
+        </ul>
+    </section>
+    <a href="http://127.0.0.1:8000/index/deathmetal/">volver</a>
+    <a href="http://127.0.0.1:8000/index/">Inicio</a>
 
-
-        <a href="http://127.0.0.1:8000/index/deathmetal/">volver</a>
-        <a href="http://127.0.0.1:8000/index/">Inicio</a>
 </body>
+
 </html>
