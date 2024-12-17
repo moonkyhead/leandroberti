@@ -22,53 +22,42 @@ from django.conf.urls.static import static
 
 
 
+from django.contrib import admin
+from django.urls import path, include
+from final import views
 
+# Rutas Comunes
+base_patterns = [
+    path('', views.index, name='index'),
+    path('numetal/', views.numetal, name='numetal'),
+    path('trashmetal/', views.trashmetal, name='trashmetal'),
+    path('deathmetal/', views.deathmetal, name='deathmetal'),
+    path('instructores/', views.instructores, name='instructores'),
+
+    # Bandas por Género
+    path('numetal/korn/', views.korn, name='korn'),
+    path('numetal/disturbed/', views.disturbed, name='disturbed'),
+    path('numetal/deftones/', views.deftones, name='deftones'),
+
+    path('trashmetal/metallica/', views.metallica, name='metallica'),
+    path('trashmetal/megadeth/', views.megadeth, name='megadeth'),
+    path('trashmetal/testament/', views.testament, name='testament'),
+
+    path('deathmetal/archenemy/', views.archenemy, name='archenemy'),
+    path('deathmetal/children/', views.children, name='children'),
+    path('deathmetal/cannibal/', views.cannibal, name='cannibal'),
+]
+
+# Rutas Finales
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
-    # path('home/', views.home),
-    path('sesion/', views.sesion),
-    # path('sesion/registro', views.sesion),
-    path('registro/', views.registro),
-    path('registro/index/', views.index),
-    path('sesion/index/', views.index),
-    path('index/', views.index),
-    path('index/numetal/', views.numetal),
-    path('index/trashmetal/', views.trashmetal),
-    path('index/deathmetal/', views.deathmetal),
-    path('index/instructores/', views.instructores),
-    path('index/numetal/korn/', views.korn),
-    path('index/numetal/disturbed/', views.disturbed),
-    path('index/numetal/deftones/', views.deftones),
-    path('index/trashmetal/metallica/', views.metallica),
-    path('index/trashmetal/megadeth/', views.megadeth),
-    path('index/trashmetal/testament/', views.testament),
-    path('index/deathmetal/archenemy/', views.archenemy),
-    path('index/deathmetal/children/', views.children),
-    path('index/deathmetal/cannibal/', views.cannibal),
-    path('sesion/index/', views.index),
-    path('sesion/index/numetal/', views.numetal),
-    path('sesion/index/trashmetal/', views.trashmetal),
-    path('sesion/index/deathmetal/', views.deathmetal),
-    path('sesion/index/numetal/korn/', views.korn),
-    path('sesion/index/numetal/disturbed/', views.disturbed),
-    path('sesion/index/numetal/deftones/', views.deftones),
-    path('sesion/index/trashmetal/metallica/', views.metallica),
-    path('sesion/index/trashmetal/megadeth/', views.megadeth),
-    path('sesion/index/trashmetal/testament/', views.testament),
-    path('sesion/index/deathmetal/archenemy/', views.archenemy),
-    path('sesion/index/deathmetal/children/', views.children),
-    path('sesion/index/deathmetal/cannibal/', views.cannibal),
-    path('registro/index/numetal/', views.numetal),
-    path('registro/index/trashmetal/', views.trashmetal),
-    path('registro/index/deathmetal/', views.deathmetal),
-    path('registro/index/numetal/korn/', views.korn),
-    path('registro/index/numetal/disturbed/', views.disturbed),
-    path('registro/index/numetal/deftones/', views.deftones),
-    path('registro/index/trashmetal/metallica/', views.metallica),
-    path('registro/index/trashmetal/megadeth/', views.megadeth),
-    path('registro/index/trashmetal/testament/', views.testament),
-    path('registro/index/deathmetal/archenemy/', views.archenemy),
-    path('registro/index/deathmetal/children/', views.children),
-    path('registro/index/deathmetal/cannibal/', views.cannibal),
+    path('', views.home, name='home'),
+    path('home/', views.home, name='home'),
+    path('sesion/', views.sesion, name='sesion'),
+    path('registro/', views.registro, name='registro'),
+
+    # Incluyendo Rutas Comunes
+    path('index/', include((base_patterns, 'final'))),
+    path('sesion/index/', include((base_patterns, 'final'))),
+    path('registro/index/', include((base_patterns, 'final'))),
 ]

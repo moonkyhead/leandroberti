@@ -1,4 +1,4 @@
-{% load static %} 
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +20,11 @@
         }
         form {
             margin-top: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            text-align: left;
         }
         label {
             font-size: 1.5em;
@@ -28,7 +33,7 @@
         }
         input {
             padding: 10px;
-            width: 300px;
+            width: 100%;
             border: none;
             border-radius: 5px;
             margin-bottom: 15px;
@@ -62,7 +67,8 @@
 
     <div style="background: url('{% static 'final/img/sesion.png' %}') no-repeat center center; background-size: contain; padding: 20px;">
         <h1 style="text-align: center; color: red; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Iniciar Sesión</h1>
-        <form id="loginForm" style="background: none(255, 255, 255, 0.8); padding: 20px; border-radius: 10px;">
+        
+        <form id="loginForm">
             <label for="username">Usuario:</label>
             <input type="text" id="username" name="username" required>
             
@@ -73,7 +79,7 @@
             <p class="error" id="errorMessage"></p>
         </form>
     
-        <div class="register-option" id="registerOption" style="display: none; text-align: center; margin-top: 20px;">
+        <div class="register-option" id="registerOption" style="display: none;">
             <p>¿No tenes un usuario? ¿En serio?</p>
             <p><a href="index/">Hace click aca mostro</a></p>
         </div>
@@ -96,4 +102,5 @@
 
 </body>
 </html>
+
 

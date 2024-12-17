@@ -1,13 +1,17 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-
-
 # Create your views here.
 
 
 
 def home(request):
     return render(request, 'final/home.html')
+
+def sesion(request):
+    return render(request, 'final/sesion.html')
+
+def registro(request):
+    return render(request, 'final/registro.html')
 
 def index(request):
     return render(request, 'final/index.html')
@@ -51,8 +55,4 @@ def archenemy(request):
 def cannibal(request):
     return render(request, 'final/cannibal.html')
 
-def sesion(request):
-    return render(request, 'final/sesion.html')
 
-def registro(request):
-    return render(request, 'final/registro.html')
