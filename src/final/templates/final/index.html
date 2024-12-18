@@ -1,75 +1,61 @@
-{% load static %} 
+{% extends 'final/base.html' %}
+{% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leandrito</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            font-family: 'PlazaFont', sans-serif;
-            font-size: 2em;
-            margin-top: 20px;
-        }
-        h2 {
-            font-family: 'KingsmanFont', sans-serif;
-            font-size: 3em;
-            margin: 10px 0;
-        }
-        a {
-            font-family: 'KornFont', sans-serif;
-            text-decoration: none;
-            color: white;
-            background: rgb(88, 40, 40);
-            padding: 15px 30px;
-            display: inline-block;
-            margin-top: 20px;
-            border: 2px solid white;
-            font-size: 1.5em;
-        }
-        @font-face {
-            font-family: 'KornFont';
-            src: url('https://example.com/path-to-korn-font.ttf'); /* Reemplaza con la URL correcta */
-        }
-        @font-face {
-            font-family: 'PlazaFont';
-            src: url('https://example.com/path-to-plaza-font.ttf'); /* Reemplaza con la URL correcta */
-        }
-        @font-face {
-            font-family: 'KingsmanFont';
-            src: url('https://example.com/path-to-kingsman-font.ttf'); /* Reemplaza con la URL correcta */
-        }
-    </style>
-</head>
-<body>
-
-    <h1>¿Con que te vas a deleitar el dia de hoy?</h1>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; height: 100vh; background-color: black;">
-        <div style="background: url('{% static 'final/img/index.png' %}') no-repeat center center; background-size: cover; display: flex; align-items: center; justify-content: center;">
-            <a href="numetal/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Nu Metal</a>
+{% block content %}
+<div class="container-fluid p-0">
+    <div class="row g-0">
+        <div class="col-md-6 genre-box" style="background: url('{% static 'final/img/index.png' %}') no-repeat center center; background-size: cover;">
+            <a href="{% url 'numetal' %}" class="genre-link">Nu Metal</a>
         </div>
-        <div style="background: url('{% static 'final/img/index2.png' %}') no-repeat center center; background-size: cover; display: flex; align-items: center; justify-content: center;">
-            <a href="trashmetal/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Trash Metal</a>
-        </div>
-        <div style="background: url('{% static 'final/img/index3.png' %}') no-repeat center center; background-size: cover; display: flex; align-items: center; justify-content: center;">
-            <a href="deathmetal/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Death Metal</a>
-        </div>
-        <div style="background: url('{% static 'final/img/index4.png' %}') no-repeat center center; background-size: cover; display: flex; align-items: center; justify-content: center;">
-            <a href="instructores/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Nico & Esteban</a>
+        <div class="col-md-6 genre-box" style="background: url('{% static 'final/img/index2.png' %}') no-repeat center center; background-size: cover;">
+            <a href="{% url 'trashmetal' %}" class="genre-link">Thrash Metal</a>
         </div>
     </div>
+    <div class="row g-0">
+        <div class="col-md-6 genre-box" style="background: url('{% static 'final/img/index3.png' %}') no-repeat center center; background-size: cover;">
+            <a href="{% url 'deathmetal' %}" class="genre-link">Death Metal</a>
+        </div>
+        <div class="col-md-6 genre-box" style="background: url('{% static 'final/img/index4.png' %}') no-repeat center center; background-size: cover;">
+            <a href="{% url 'instructores' %}" class="genre-link">Instructores</a>
+        </div>
+    </div>
+    <div class="row g-0">
+        <div class="col-md-6 genre-box" style="background: url('{% static 'final/img/metal.png' %}') no-repeat center center; background-size: cover;">
+            <a href="{% url 'metal' %}" class="genre-link">Metal</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .genre-box {
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
     
-
-</body>
-</html>
-
-
-
+    .genre-box:hover {
+        transform: scale(1.02);
+        z-index: 1;
+    }
+    
+    .genre-link {
+        color: white;
+        font-size: 2em;
+        text-decoration: none;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        font-family: 'KornFont', sans-serif;
+        padding: 15px 30px;
+        background: rgba(88, 40, 40, 0.7);
+        border: 2px solid white;
+        transition: all 0.3s ease;
+    }
+    
+    .genre-link:hover {
+        color: white;
+        background: rgba(120, 60, 60, 0.8);
+        transform: scale(1.1);
+    }
+</style>
+{% endblock %}

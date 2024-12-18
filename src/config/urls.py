@@ -15,18 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from final import views
-from django.conf import settings # para probar nuevos archivos
+from final.urls import metal, auth, admin_crud
+from django.conf import settings 
 from django.conf.urls.static import static
 
 
 
-from django.contrib import admin
-from django.urls import path, include
-from final import views
-
-# Rutas Comunes
 base_patterns = [
     path('', views.index, name='index'),
     path('numetal/', views.numetal, name='numetal'),
@@ -34,7 +30,6 @@ base_patterns = [
     path('deathmetal/', views.deathmetal, name='deathmetal'),
     path('instructores/', views.instructores, name='instructores'),
 
-    # Bandas por Género
     path('numetal/korn/', views.korn, name='korn'),
     path('numetal/disturbed/', views.disturbed, name='disturbed'),
     path('numetal/deftones/', views.deftones, name='deftones'),
@@ -48,7 +43,6 @@ base_patterns = [
     path('deathmetal/cannibal/', views.cannibal, name='cannibal'),
 ]
 
-# Rutas Finales
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
@@ -56,8 +50,22 @@ urlpatterns = [
     path('sesion/', views.sesion, name='sesion'),
     path('registro/', views.registro, name='registro'),
 
-    # Incluyendo Rutas Comunes
+
     path('index/', include((base_patterns, 'final'))),
     path('sesion/index/', include((base_patterns, 'final'))),
     path('registro/index/', include((base_patterns, 'final'))),
+]
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
+    path('', include(auth.urlpatterns)),  
+    path('', include(admin_crud.urlpatterns)),  
+    path('index/', views.index, name='index'),
+    path('index/', include(metal.urlpatterns)),  
+    path('index/instructores/', views.instructores, name='instructores'),
+    path('sesion/index/', views.index, name='sesion_index'),
+    path('sesion/index/', include(metal.urlpatterns)),
+    path('registro/index/', views.index, name='registro_index'),
+    path('registro/index/', include(metal.urlpatterns)),
 ]

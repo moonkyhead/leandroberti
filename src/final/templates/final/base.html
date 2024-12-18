@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leandrito</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+        }
+        .btn-dark {
+            background-color: rgb(88, 40, 40);
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+        .btn-dark:hover {
+            background-color: rgb(120, 60, 60);
+            transform: scale(1.05);
+        }
+        h1, h2 {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        .container {
+            padding-top: 2rem;
+        }
+        @font-face {
+            font-family: 'KornFont';
+            src: url('{% static "fonts/korn-font.ttf" %}');
+        }
+        @font-face {
+            font-family: 'PlazaFont';
+            src: url('{% static "fonts/plaza-font.ttf" %}');
+        }
+        @font-face {
+            font-family: 'KingsmanFont';
+            src: url('{% static "fonts/kingsman-font.ttf" %}');
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(88, 40, 40);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'index' %}">Leandrito</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'listar_bandas' %}">Bandas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'listar_artistas' %}">Artistas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'instructores' %}">Instructores</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

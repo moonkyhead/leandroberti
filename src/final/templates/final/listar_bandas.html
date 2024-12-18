@@ -1,0 +1,19 @@
+{% extends 'final/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Lista de Bandas</h2>
+    <a href="{% url 'crear_banda' %}" class="btn btn-primary mb-3">Crear Nueva Banda</a>
+    <ul class="list-group">
+        {% for banda in bandas %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ banda.nombre }}
+            <div>
+                <a href="{% url 'actualizar_banda' banda.id %}" class="btn btn-warning btn-sm">Actualizar</a>
+                <a href="{% url 'eliminar_banda' banda.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'final/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="text-center mb-4">Pantera</h1><img src="{% static 'final/img/pantera-banner.jpg' %}" class="card-img-top" alt="Pantera Band">
+                <div class="card-body">
+                    <h2 class="card-title">Biography</h2>
+                    <p class="card-text">
+                        Pantera was an American heavy metal band formed in 1981 in Arlington, Texas. The group's best-known lineup consisted of the Abbott brothers (drummer Vinnie Paul and guitarist Dimebag Darrell), along with vocalist Phil Anselmo and bassist Rex Brown. Pantera is considered one of the most successful and influential bands in heavy metal history, known for their aggressive sound and technical proficiency.
+                    </p>
+                    <p class="card-text">
+                        The band achieved its commercial breakthrough with their fifth album, Cowboys from Hell (1990). Their following releases, including Vulgar Display of Power (1992) and Far Beyond Driven (1994), made them one of the most influential heavy metal bands of the 1990s.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 class="card-title">Discography</h2>
+                    <ul class="list-group list-group-flush bg-dark">
+                        <li class="list-group-item bg-dark text-white">Metal Magic (1983)</li>
+                        <li class="list-group-item bg-dark text-white">Projects in the Jungle (1984)</li>
+                        <li class="list-group-item bg-dark text-white">I Am the Night (1985)</li>
+                        <li class="list-group-item bg-dark text-white">Power Metal (1988)</li>
+                        <li class="list-group-item bg-dark text-white">Cowboys from Hell (1990)</li>
+                        <li class="list-group-item bg-dark text-white">Vulgar Display of Power (1992)</li>
+                        <li class="list-group-item bg-dark text-white">Far Beyond Driven (1994)</li>
+                        <li class="list-group-item bg-dark text-white">The Great Southern Trendkill (1996)</li>
+                        <li class="list-group-item bg-dark text-white">Reinventing the Steel (2000)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="{% url 'metal' %}" class="btn btn-primary">Back to Metal Bands</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
