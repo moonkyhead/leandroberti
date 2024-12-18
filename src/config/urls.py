@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from final import views
-from final.urls import metal, auth
+from final.urls import metal, auth, admin_crud
 from django.conf import settings 
 from django.conf.urls.static import static
 
@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('', include(auth.urlpatterns)),  
+    path('', include(admin_crud.urlpatterns)),  # Include CRUD operations
     path('index/', views.index, name='index'),
     path('index/', include(metal.urlpatterns)),  
     path('index/instructores/', views.instructores, name='instructores'),

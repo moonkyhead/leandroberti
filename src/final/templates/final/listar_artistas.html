@@ -1,0 +1,19 @@
+{% extends 'final/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Lista de Artistas</h2>
+    <a href="{% url 'crear_artista' %}" class="btn btn-primary mb-3">Crear Nuevo Artista</a>
+    <ul class="list-group">
+        {% for artista in artistas %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ artista.nombre }}
+            <div>
+                <a href="{% url 'actualizar_artista' artista.id %}" class="btn btn-warning btn-sm">Actualizar</a>
+                <a href="{% url 'eliminar_artista' artista.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

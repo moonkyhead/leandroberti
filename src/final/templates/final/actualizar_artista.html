@@ -1,0 +1,16 @@
+{% extends 'final/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Actualizar Artista</h2>
+    <form method="POST" class="col-md-6">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="nombre">Nombre del Artista:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ artista.nombre }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Actualizar</button>
+        <a href="{% url 'listar_artistas' %}" class="btn btn-secondary mt-3">Volver</a>
+    </form>
+</div>
+{% endblock %}
