@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import Usuario, Banda, Artista
 
-# Create your views here.
+
 
 def home(request):
     return render(request, 'final/home.html')
@@ -56,11 +56,11 @@ def sesion(request):
 def registro(request):
     return render(request, 'final/registro.html')
 
-# INDEX
+
 def index(request):
     return render(request, 'final/index.html')
 
-# CRUD Usuarios
+
 def listar_usuarios(request):
     usuarios = Usuario.objects.all()
     return render(request, 'final/listar_usuarios.html', {'usuarios': usuarios})
@@ -131,7 +131,7 @@ def eliminar_banda(request, banda_id):
     messages.success(request, 'Banda eliminada con éxito.')
     return redirect('listar_bandas')
 
-# CRUD Artistas
+
 def crear_artista(request):
     if request.method == 'POST':
         nombre = request.POST['nombre']

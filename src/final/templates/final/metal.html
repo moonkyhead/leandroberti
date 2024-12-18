@@ -1,49 +1,59 @@
-{% extends 'final/base.html' %}
-{% load static %}
+{% load static %} 
 
-{% block content %}
-<div class="container-fluid p-0">
-    <div class="row g-0">
-        <div class="col-12 genre-box" style="background: url('{% static 'final/img/metal.jpg' %}') no-repeat center center; background-size: cover; height: 100vh;">
-            <div class="content-overlay text-center">
-                <h1 class="display-1 mb-4 text-white">Metal</h1>
-                <div class="d-grid gap-3 col-md-6 mx-auto">
-                    <a href="{% url 'pantera' %}" class="btn btn-dark btn-lg genre-link">Pantera</a>
-                </div>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leandrito</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-family: 'PlazaFont', sans-serif;
+            font-size: 5em;
+            margin-top: 50px;
+        }
+        h2 {
+            font-family: 'KingsmanFont', sans-serif;
+            font-size: 3em;
+            margin: 20px 0;
+        }
+        a {
+            font-family: 'KornFont', sans-serif;
+            text-decoration: none;
+            color: white;
+            background: black;
+            padding: 15px 30px;
+            display: inline-block;
+            margin-top: 20px;
+            border: 2px solid white;
+            font-size: 1.5em;
+        }
+        @font-face {
+            font-family: 'KornFont';
+            src: url('https://example.com/path-to-korn-font.ttf'); 
+        }
+        @font-face {
+            font-family: 'PlazaFont';
+            src: url('https://example.com/path-to-plaza-font.ttf'); 
+        }
+        @font-face {
+            font-family: 'KingsmanFont';
+            src: url('https://example.com/path-to-kingsman-font.ttf'); 
+        }
+    </style>
+</head>
+<body>
+    <div style="height: 100vh; background: url('{% static 'final/img/metal.png' %}') no-repeat center center; background-size: contain; display: flex; flex-direction:column; align-items:center; justify-content:center;">
+        <a href="metal/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); margin: 10px;">Metal</a>
+        <a href="http://127.0.0.1:8000/index/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); margin: 10px;">Volver</a>
     </div>
-</div>
-
-<style>
-    .genre-box {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
     
-    .content-overlay {
-        background: rgba(0, 0, 0, 0.6);
-        padding: 2rem;
-        border-radius: 10px;
-    }
     
-    .genre-link {
-        font-family: 'KornFont', sans-serif;
-        font-size: 2em;
-        border: 2px solid white;
-        transition: all 0.3s ease;
-    }
-    
-    .genre-link:hover {
-        transform: scale(1.05);
-        background-color: rgba(88, 40, 40, 0.9);
-    }
-    
-    h1 {
-        font-family: 'KornFont', sans-serif;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-    }
-</style>
-{% endblock %}
+</body>
+</html>
