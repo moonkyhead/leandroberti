@@ -17,6 +17,4 @@ urlpatterns = [
     path('sesion/index/', include(metal.urlpatterns)),
     path('registro/index/', views.index, name='registro_index'),
     path('registro/index/', include(metal.urlpatterns)),
-    path('sesion/', views.sesion, name='sesion'),
-    path('registro/', views.registro, name='registro'),
 ]

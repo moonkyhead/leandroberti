@@ -61,14 +61,35 @@
             color: white;
             text-decoration: none;
         }
+        .alert {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .alert-danger {
+            background-color: #ff4444;
+            color: white;
+        }
+        .alert-success {
+            background-color: #00C851;
+            color: white;
+        }
     </style>
 </head>
 <body>
-
     <div style="background: url('{% static 'final/img/sesion.png' %}') no-repeat center center; background-size: contain; padding: 20px;">
         <h1 style="text-align: center; color: red; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Iniciar Sesión</h1>
         
-        <form id="loginForm">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST" action="{% url 'sesion' %}">
+            {% csrf_token %}
             <label for="username">Usuario:</label>
             <input type="text" id="username" name="username" required>
             
@@ -76,31 +97,12 @@
             <input type="password" id="password" name="password" required>
             
             <button type="submit">Ingresar</button>
-            <p class="error" id="errorMessage"></p>
         </form>
     
-        <div class="register-option" id="registerOption" style="display: none;">
+        <div class="register-option">
             <p>¿No tenes un usuario? ¿En serio?</p>
-            <p><a href="index/">Hace click aca mostro</a></p>
+            <p><a href="{% url 'registro' %}">Hace click aca mostro</a></p>
         </div>
     </div>
-    
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            if (username === 'admin' && password === '1234') {
-                window.location.href = 'principal.html';
-            } else {
-                document.getElementById('errorMessage').textContent = 'Usuario o contraseña incorrectos';
-                document.getElementById('registerOption').style.display = 'block';
-            }
-        });
-    </script>
-
 </body>
 </html>
-
-
