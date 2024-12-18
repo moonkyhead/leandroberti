@@ -15,59 +15,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from final import views
-from django.conf import settings # para probar nuevos archivos
+from final.urls import metal, auth
+from django.conf import settings 
 from django.conf.urls.static import static
-
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
-    # path('home/', views.home),
-    path('sesion/', views.sesion),
-    # path('sesion/registro', views.sesion),
-    path('registro/', views.registro),
-    path('registro/index/', views.index),
-    path('sesion/index/', views.index),
-    path('index/', views.index),
-    path('index/numetal/', views.numetal),
-    path('index/trashmetal/', views.trashmetal),
-    path('index/deathmetal/', views.deathmetal),
-    path('index/instructores/', views.instructores),
-    path('index/numetal/korn/', views.korn),
-    path('index/numetal/disturbed/', views.disturbed),
-    path('index/numetal/deftones/', views.deftones),
-    path('index/trashmetal/metallica/', views.metallica),
-    path('index/trashmetal/megadeth/', views.megadeth),
-    path('index/trashmetal/testament/', views.testament),
-    path('index/deathmetal/archenemy/', views.archenemy),
-    path('index/deathmetal/children/', views.children),
-    path('index/deathmetal/cannibal/', views.cannibal),
-    path('sesion/index/', views.index),
-    path('sesion/index/numetal/', views.numetal),
-    path('sesion/index/trashmetal/', views.trashmetal),
-    path('sesion/index/deathmetal/', views.deathmetal),
-    path('sesion/index/numetal/korn/', views.korn),
-    path('sesion/index/numetal/disturbed/', views.disturbed),
-    path('sesion/index/numetal/deftones/', views.deftones),
-    path('sesion/index/trashmetal/metallica/', views.metallica),
-    path('sesion/index/trashmetal/megadeth/', views.megadeth),
-    path('sesion/index/trashmetal/testament/', views.testament),
-    path('sesion/index/deathmetal/archenemy/', views.archenemy),
-    path('sesion/index/deathmetal/children/', views.children),
-    path('sesion/index/deathmetal/cannibal/', views.cannibal),
-    path('registro/index/numetal/', views.numetal),
-    path('registro/index/trashmetal/', views.trashmetal),
-    path('registro/index/deathmetal/', views.deathmetal),
-    path('registro/index/numetal/korn/', views.korn),
-    path('registro/index/numetal/disturbed/', views.disturbed),
-    path('registro/index/numetal/deftones/', views.deftones),
-    path('registro/index/trashmetal/metallica/', views.metallica),
-    path('registro/index/trashmetal/megadeth/', views.megadeth),
-    path('registro/index/trashmetal/testament/', views.testament),
-    path('registro/index/deathmetal/archenemy/', views.archenemy),
-    path('registro/index/deathmetal/children/', views.children),
-    path('registro/index/deathmetal/cannibal/', views.cannibal),
+    path('', views.home, name='home'),
+    path('', include(auth.urlpatterns)),  
+    path('index/', views.index, name='index'),
+    path('index/', include(metal.urlpatterns)),  
+    path('index/instructores/', views.instructores, name='instructores'),
+    path('sesion/index/', views.index, name='sesion_index'),
+    path('sesion/index/', include(metal.urlpatterns)),
+    path('registro/index/', views.index, name='registro_index'),
+    path('registro/index/', include(metal.urlpatterns)),
 ]
