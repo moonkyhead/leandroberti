@@ -50,10 +50,9 @@
 </head>
 <body>
     <div style="height: 100vh; background: url('{% static 'final/img/metal.png' %}') no-repeat center center; background-size: contain; display: flex; flex-direction:column; align-items:center; justify-content:center;">
-        <a href="metal/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); margin: 10px;">Metal</a>
-        <a href="http://127.0.0.1:8000/index/" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); margin: 10px;">Volver</a>
+        <a href="{% url 'pantera' %}" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); margin: 10px;">Pantera</a>
+        <a href="{% url 'index' %}" style="color: white; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); margin: 10px;">Volver</a>
     </div>
-    
-    
 </body>
 </html>
+ 
