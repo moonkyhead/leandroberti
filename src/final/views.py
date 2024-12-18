@@ -58,12 +58,31 @@ def registro(request):
 
 # INDEX
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'final/index.html')
 
 # CRUD Usuarios
 def listar_usuarios(request):
     usuarios = Usuario.objects.all()
-    return render(request, 'listar_usuarios.html', {'usuarios': usuarios})
+    return render(request, 'final/listar_usuarios.html', {'usuarios': usuarios})
+
+def registrar_usuario(request):
+    if request.method == 'POST':
+        nombre = request.POST['nombre']
+        apellido = request.POST['apellido']
+        correo_electronico = request.POST['correo_electronico']
+        usuario = request.POST['usuario']
+        contrasena = request.POST['contrasena']
+        
+        Usuario.objects.create(
+            nombre=nombre,
+            apellido=apellido,
+            correo_electronico=correo_electronico,
+            usuario=usuario,
+            contrasena=contrasena
+        )
+        messages.success(request, 'Usuario registrado con éxito.')
+        return redirect('listar_usuarios')
+    return render(request, 'final/registrar_usuario.html')
 
 def actualizar_usuario(request, usuario_id):
     usuario = get_object_or_404(Usuario, id=usuario_id)
@@ -76,7 +95,7 @@ def actualizar_usuario(request, usuario_id):
         usuario.save()
         messages.success(request, 'Usuario actualizado con éxito.')
         return redirect('listar_usuarios')
-    return render(request, 'actualizar_usuario.html', {'usuario': usuario})
+    return render(request, 'final/actualizar_usuario.html', {'usuario': usuario})
 
 def eliminar_usuario(request, usuario_id):
     usuario = get_object_or_404(Usuario, id=usuario_id)
@@ -91,11 +110,11 @@ def crear_banda(request):
         Banda.objects.create(nombre=nombre)
         messages.success(request, 'Banda creada con éxito.')
         return redirect('listar_bandas')
-    return render(request, 'crear_banda.html')
+    return render(request, 'final/crear_banda.html')
 
 def listar_bandas(request):
     bandas = Banda.objects.all()
-    return render(request, 'listar_bandas.html', {'bandas': bandas})
+    return render(request, 'final/listar_bandas.html', {'bandas': bandas})
 
 def actualizar_banda(request, banda_id):
     banda = get_object_or_404(Banda, id=banda_id)
@@ -104,7 +123,7 @@ def actualizar_banda(request, banda_id):
         banda.save()
         messages.success(request, 'Banda actualizada con éxito.')
         return redirect('listar_bandas')
-    return render(request, 'actualizar_banda.html', {'banda': banda})
+    return render(request, 'final/actualizar_banda.html', {'banda': banda})
 
 def eliminar_banda(request, banda_id):
     banda = get_object_or_404(Banda, id=banda_id)
@@ -119,11 +138,11 @@ def crear_artista(request):
         Artista.objects.create(nombre=nombre)
         messages.success(request, 'Artista creado con éxito.')
         return redirect('listar_artistas')
-    return render(request, 'crear_artista.html')
+    return render(request, 'final/crear_artista.html')
 
 def listar_artistas(request):
     artistas = Artista.objects.all()
-    return render(request, 'listar_artistas.html', {'artistas': artistas})
+    return render(request, 'final/listar_artistas.html', {'artistas': artistas})
 
 def actualizar_artista(request, artista_id):
     artista = get_object_or_404(Artista, id=artista_id)
@@ -132,10 +151,16 @@ def actualizar_artista(request, artista_id):
         artista.save()
         messages.success(request, 'Artista actualizado con éxito.')
         return redirect('listar_artistas')
-    return render(request, 'actualizar_artista.html', {'artista': artista})
+    return render(request, 'final/actualizar_artista.html', {'artista': artista})
 
 def eliminar_artista(request, artista_id):
     artista = get_object_or_404(Artista, id=artista_id)
     artista.delete()
     messages.success(request, 'Artista eliminado con éxito.')
     return redirect('listar_artistas')
+
+def metal(request):
+    return render(request, 'final/metal.html')
+
+def pantera(request):
+    return render(request, 'final/pantera.html')
