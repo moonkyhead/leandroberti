@@ -30,7 +30,7 @@ def registro(request):
             return render(request, 'final/registro.html')
 
         try:
-            # Crear usuario de Django
+           
             user = User.objects.create_user(
                 username=username,
                 email=correo_electronico,
@@ -39,7 +39,7 @@ def registro(request):
                 last_name=apellido
             )
 
-            # Crear perfil de usuario
+           
             Usuario.objects.create(
                 nombre=nombre,
                 apellido=apellido,
