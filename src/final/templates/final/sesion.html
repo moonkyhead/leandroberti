@@ -13,11 +13,14 @@
             text-align: center;
             font-family: Arial, sans-serif;
         }
+
         h1 {
             font-family: 'PlazaFont', sans-serif;
             font-size: 5em;
             margin-top: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7); 
         }
+
         form {
             margin-top: 20px;
             background: rgba(255, 255, 255, 0.8);
@@ -26,11 +29,14 @@
             display: inline-block;
             text-align: left;
         }
+
         label {
             font-size: 1.5em;
             margin: 10px 0 5px;
             display: block;
+            color: black;
         }
+
         input {
             padding: 10px;
             width: 100%;
@@ -39,6 +45,7 @@
             margin-bottom: 15px;
             font-size: 1.2em;
         }
+
         button {
             font-size: 1.2em;
             padding: 10px 20px;
@@ -49,37 +56,71 @@
             cursor: pointer;
             margin-top: 10px;
         }
+
         .error {
             color: red;
             margin-top: 10px;
         }
+
         .register-option {
             margin-top: 15px;
             font-size: 1.2em;
         }
+
         .register-option a {
             color: white;
             text-decoration: none;
         }
+
         .alert {
             padding: 10px;
             margin: 10px 0;
             border-radius: 5px;
         }
+
         .alert-danger {
             background-color: #ff4444;
             color: white;
         }
+
         .alert-success {
             background-color: #00C851;
             color: white;
         }
+
+      
+        audio {
+            margin-top: 30px;
+            background-color: #222;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        
+        .background {
+            background: url('{% static "final/img/sesion.png" %}') no-repeat center center;
+            background-size: 50%; 
+            background-position: center; 
+            padding: 20px;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
-    <div style="background: url('{% static 'final/img/sesion.png' %}') no-repeat center center; background-size: contain; padding: 20px;">
-        <h1 style="text-align: center; color: red; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Iniciar Sesión</h1>
-        
+    <div class="background">
+        <h1 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Iniciar Sesión</h1>
+
+     
+        <audio autoplay controls>
+            <source src="{% static 'audio/sick2.mp3' %}" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+
         {% if messages %}
             {% for message in messages %}
                 <div class="alert alert-{{ message.tags }}">
@@ -98,7 +139,7 @@
             
             <button type="submit">Ingresar</button>
         </form>
-    
+
         <div class="register-option">
             <p>¿No tenes un usuario? ¿En serio?</p>
             <p><a href="{% url 'registro' %}">Hace click aca mostro</a></p>
@@ -106,3 +147,10 @@
     </div>
 </body>
 </html>
+
+
+
+
+
+
+

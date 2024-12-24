@@ -1,11 +1,11 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leandrito</title>
+    <title>Lo de Leandrito</title>
     <style>
         body {
             background-color: black;
@@ -14,9 +14,12 @@
             font-family: Arial, sans-serif;
         }
         h1 {
-            font-family: 'typehill studio', sans-serif;
+            font-family: 'KingsmanFont', cursive; 
             font-size: 3em;
             margin-top: 50px;
+            letter-spacing: 2px;
+            text-transform: none; 
+            text-decoration: underline; 
         }
         h2 {
             font-family: 'typehill studio', sans-serif;
@@ -27,12 +30,16 @@
             font-family: 'typehill studio', sans-serif;
             text-decoration: none;
             color: white;
-            background: black;
+            background: rgba(0, 0, 0, 0.8); 
             padding: 15px 30px;
             display: inline-block;
             margin-top: 10px;
-            border: 1px solid white;
+            border: 2px solid white; 
             font-size: 1em;
+            width: 200px; 
+            text-align: center;
+            border-radius: 5px; 
+            font-weight: bold; 
         }
         @font-face {
             font-family: 'KornFont';
@@ -46,29 +53,19 @@
             font-family: 'KingsmanFont';
             src: url('https://example.com/path-to-kingsman-font.ttf'); 
         }
-    </style>
-</head><!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lo de Leandrito</title>
-    <style>
         .container {
             position: relative;
             text-align: center;
         }
 
-        .top-left {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        .top-right {
-            position: absolute;
-            top: 10px;
-            right: 10px;
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 10px;
+            position: relative;
+            margin-left: 10px;
         }
 
         img {
@@ -85,19 +82,39 @@
 
 <h1>Lo de Leandrito</h1>
 
-<audio controls autoplay loop>
-    <source src="{% static 'audio/sick.mp3' %}" type="audio/mpeg">
-    Tu navegador no soporta el elemento de audio.
-</audio>
+
+<div class="buttons">
+    <a href="sesion/">Ingresar</a>
+    <a href="registro/">Registrarse</a>
+
+    
+    <audio id="audioPlayer" controls>
+        <source src="{% static 'audio/sick.mp3' %}" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+</div>
+
+
+<script>
+    var audio = document.getElementById('audioPlayer');
+    audio.volume = 0.5; 
+</script>
 
 <div class="container">
     <img src="{% static 'final/img/fotito.png' %}" alt="Imagen">
-    
-    <a href="sesion/" class="top-left">Ingresar</a>
-    <a href="registro/" class="top-right">Registrarse</a>
 
     <h2>Musica para Explotar tu cabeza</h2>
 </div>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+

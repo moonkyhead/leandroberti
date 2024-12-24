@@ -12,20 +12,37 @@
             color: red;
             text-align: center;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
+
         h1 {
             font-family: 'PlazaFont', sans-serif;
-            font-size: 5em;
-            margin-top: 50px;
+            font-size: 4em; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            margin-right: 20px;
         }
+
         form {
             margin-top: 20px;
+            background: rgba(255, 255, 255, 0.9); 
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            text-align: left;
         }
+
         label {
             font-size: 1.5em;
             margin: 10px 0 5px;
             display: block;
+            color: black;
         }
+
         input {
             padding: 10px;
             width: 300px;
@@ -34,6 +51,7 @@
             margin-bottom: 15px;
             font-size: 1.2em;
         }
+
         button {
             font-size: 1.2em;
             padding: 10px 20px;
@@ -44,24 +62,66 @@
             cursor: pointer;
             margin-top: 10px;
         }
+
         .alert {
             padding: 10px;
             margin: 10px 0;
             border-radius: 5px;
         }
+
         .alert-danger {
             background-color: #ff4444;
             color: white;
         }
+
         .alert-success {
             background-color: #00C851;
             color: white;
         }
+
+      
+        audio {
+            margin-left: 10px;
+            background-color: #222; 
+            border-radius: 10px;
+            padding: 5px;
+            height: 40px; 
+            width: 150px; 
+        }
+
+       
+        .background {
+            background: url('{% static "final/img/registro.png" %}') no-repeat center center;
+            background-size: contain; 
+            background-position: center;
+            padding: 20px;
+            height: 100vh; 
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        
+        .title-audio-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px; 
+        }
     </style>
 </head>
 <body>
-    <div style="background: url('{% static 'final/img/registro.png' %}') no-repeat center center; background-size: contain; padding: 20px;">
-        <h1 style="text-align: center; color: red; text-decoration: 2px 2px 4px red(0,0,0,0.7);">Registro</h1>
+    <div class="background">
+        <div class="title-audio-container">
+            <h1 style="color: red;">Registro</h1>
+        
+            <audio autoplay controls>
+                <source src="{% static 'audio/sick2.mp3' %}" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
 
         {% if messages %}
             {% for message in messages %}
@@ -71,7 +131,7 @@
             {% endfor %}
         {% endif %}
 
-        <form method="POST" action="{% url 'registro' %}" style="background: none(255, 255, 255, 0.8); padding: 20px; border-radius: 10px;">
+        <form method="POST" action="{% url 'registro' %}">
             {% csrf_token %}
             
             <label for="firstName">Nombre:</label>
